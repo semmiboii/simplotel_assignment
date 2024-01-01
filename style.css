@@ -1,0 +1,387 @@
+:root{
+    --holder-color: #ff7070ff; 
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+html,body{
+    background: rgb(255,245,173);
+    background: linear-gradient(90deg, rgba(255,245,173,1) 0%, rgba(255,186,233,1) 100%);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* LANDING SECTION */
+
+.order_food__landing{
+    height: 100%;
+    width: 100%;
+}
+
+/* NAVBAR */
+
+.order_food__nav{
+    background-color: var(--holder-color);
+    height: 5%;
+}
+
+.order_food__nav ul{
+    height: 100%;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+}
+
+.order_food__nav img{
+    height: 30px;
+}
+
+/* HOME */
+
+.order_food__home {
+    height: 95%;
+    width: 100%;
+    display: flex;
+}
+
+.order_food__home_left{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.order_food__home_left > div{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.order_food__home_left > div > h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.order_food__home_left > div > button{
+    font-size: 1rem;
+    background-color: var(--holder-color);
+    color: #fff;
+    padding: 20px 10px;
+    border: 0;
+    width: 30%;
+}
+
+.order_food__home_right{
+    display: flex; 
+    height: 100%;
+    width: 45%;
+}
+
+.order_food__home_right > img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ENDING PAGE */
+
+.order_food__bottom{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.order_food__bottom_left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 55%;
+}
+
+.order_food__bottom_left_img{
+    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    grid-template-rows: repeat(2,50%);
+    grid-auto-flow: column; 
+    gap: 20px;
+}
+
+.order_food__bottom_left_collage{
+    height: 100%;
+    width: 100%;
+}
+
+.order_food__bottom_left_collage img{
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+}
+
+.spanned_img{
+    grid-row: span 2;
+}
+
+.order_food__bottom_right{
+    width: 45%;
+    display: flex;
+    align-items: center;
+}
+
+.order_food__bottom_right .card{
+    position: relative;
+    left: 30px;
+    width: 70%;
+    padding: 20px;
+    background: var(--holder-color);
+}
+
+.order_food__bottom_right .card h1{
+    font-size: 4rem;
+}
+
+.order_food__bottom_right .card a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order_food__bottom_right .card .arrow_icon img{
+    height: 20px;
+}
+
+.nav_check{
+    display: none;
+}
+
+.show{
+    display: none;
+}
+
+
+/* FOR SMALL DEVICES */
+
+@media screen and (max-width: 600px) {
+
+    .order_food__landing{
+        height: auto;
+    }
+
+    .order_food__nav{
+        display: flex;
+        position: absolute;
+        width: 100%;
+        top: 0;
+    }
+
+    .order_food__nav ul{
+        position: fixed;
+        display: none;
+        height: 100vh;
+        width: 100%;
+        background: var(--holder-color);
+        z-index: 999;
+    }
+
+    .order_food__nav ul li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .show{
+        display: block;
+        position: absolute;
+        z-index: 1000;
+        font-size: 30px;
+        width: 100%;
+        text-align: end;
+    }
+
+    .nav_check{
+        opacity: 0;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: block;
+    }
+
+    .nav_check:checked ~ ul{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .order_food__home{
+        height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        row-gap: 10px;
+    }
+
+    .order_food__home_left{
+        width: 100%;
+    }
+
+    .order_food__home_left > div > h1{
+        font-size: 2.5rem;
+    }
+
+    .order_food__home_left > div > button{
+        width: 100%;
+    }
+
+
+    .order_food__home_right{
+        width: 100%;
+    }
+
+    .order_food__bottom{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .order_food__bottom_left{
+        width: 100%;
+    }
+
+    .order_food__bottom_right{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .order_food__bottom_right .card{
+        position: relative;
+        left: 0;
+        width: 80%;
+    }
+
+    .order_food__bottom_right .card h1{
+        font-size: 2rem;
+    }
+
+    .order_food__bottom_left_img{
+        justify-content: center;
+        flex-direction: column;
+        height: 60%;
+        width: 80%;
+        row-gap: 10px;
+    }
+    .order_food__bottom_left_collage{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .order_food__bottom_left_collage img{
+        height: 100%;
+        width: 100%;
+    }
+
+    .order_food__bottom_right{
+        height: 100%;
+        padding: 20px 0;
+    }
+
+    .spanned_img {
+        grid-row: span 1;
+    }
+
+    .spanned_mobile_img{
+        grid-column: span 2;
+    }
+
+}
+
+/* FOR MEDIUM DEVICES */
+
+@media screen and (min-width: 601px) and (max-width: 850px) {
+    .order_food__nav{
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .order_food__landing{
+        height: auto;
+    }
+
+    .order_food__home{
+        height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        row-gap: 10px;
+    }
+
+    .order_food__home_left{
+        width: 100%;
+    }
+
+    .order_food__home_right{
+        width: 100%;
+    }
+
+    .order_food__bottom{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .order_food__bottom_left{
+        height: 80%;
+        width: 100%;
+    }
+
+    .order_food__bottom_left_img{
+        height: 60%;
+        width: 80%;
+    }
+
+    .order_food__bottom_right{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+
+    .order_food__bottom_right .card {
+        position: relative;
+        left: 0;
+        width: 80%;
+    }
+
+    .order_food__bottom_right .card h1{
+        font-size: 2rem;
+    }
+}
+
+
+@media screen and (min-width: 799px ) and (max-width: 1200px){
+    .order_food__bottom_left_img{
+        height: 60%;
+        width: 80%;
+    }
+
+    .order_food__bottom_right .card h1{
+        font-size: 2rem;
+    }
+}
